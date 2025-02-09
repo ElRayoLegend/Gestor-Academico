@@ -1,0 +1,695 @@
+{
+	"info": {
+		"_postman_id": "dbbf7949-8c2d-450b-beb7-2abd454e7d68",
+		"name": "Coleccion Endpoints Gestor Academico",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37585425"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "Register Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Adrian",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Morataya",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "adriannsprv",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Adrian_Morataya147",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "adrian@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "56014229",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "STUDENT_ROLE",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/PC/Documents/!LAB2 PRACTICA/Gestor-Academico/public/uploads/profile-pictures/Kinal.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorAcademico/v1/auth/registerStudent",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"auth",
+								"registerStudent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Teacher",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Juan Pablo",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Rivas",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "jrivas",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "JRIVAS2025",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "rivas@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/PC/Documents/!LAB2 PRACTICA/Gestor-Academico/public/uploads/profile-pictures/Kinal.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorAcademico/v1/auth/registerTeacher",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"auth",
+								"registerTeacher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"adrian@gmail.com\",\r\n    \"password\": \"Adrian_Morataya!147\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorAcademico/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "STUDENT",
+			"item": [
+				{
+					"name": "List Students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorAcademico/v1/student/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"student",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Student By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorAcademico/v1/student/findStudent/67a91f56a765be690d8cdfb6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"student",
+								"findStudent",
+								"67a91f56a765be690d8cdfb6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Student",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorAcademico/v1/student/deleteStudent/67a8fdb254f85bc96eb4abfe",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"student",
+								"deleteStudent",
+								"67a8fdb254f85bc96eb4abfe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password Student",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newPassword\": \"Adrian_Morataya!147\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorAcademico/v1/student/updatePassword/67a91f56a765be690d8cdfb6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"student",
+								"updatePassword",
+								"67a91f56a765be690d8cdfb6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign Course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"studentId\": \"67a91f56a765be690d8cdfb6\",\r\n    \"courseId\": \"67a91fb9a765be690d8cdfce\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorAcademico/v1/student/enrollInCourse",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"student",
+								"enrollInCourse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Student Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorAcademico/v1/student/getCourses/67a91f56a765be690d8cdfb6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"student",
+								"getCourses",
+								"67a91f56a765be690d8cdfb6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Student",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Mario",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Rodriguez",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "mrodriguez",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Mario_Rodriguez147",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "mario@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "87654321",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/PC/Documents/!LAB2 PRACTICA/Gestor-Academico/public/uploads/profile-pictures/Alumnos.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorAcademico/v1/student/updateStudent/67a91f56a765be690d8cdfb6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"student",
+								"updateStudent",
+								"67a91f56a765be690d8cdfb6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TEACHER",
+			"item": [
+				{
+					"name": "List Teacher",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorAcademico/v1/teacher/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"teacher",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Teacher By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorAcademico/v1/teacher/findTeacher/67a91f5aa765be690d8cdfba",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"teacher",
+								"findTeacher",
+								"67a91f5aa765be690d8cdfba"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Teacher",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorAcademico/v1/teacher/deleteTeacher/67a8fdb854f85bc96eb4ac02",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"teacher",
+								"deleteTeacher",
+								"67a8fdb854f85bc96eb4ac02"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password Teacher",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newPassword\": \"Juan_Rivas!147\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorAcademico/v1/teacher/updatePassword/67a91f5aa765be690d8cdfba",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"teacher",
+								"updatePassword",
+								"67a91f5aa765be690d8cdfba"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Practica Supervisada III\",\r\n    \"teacherId\": \"67a91f5aa765be690d8cdfba\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorAcademico/v1/teacher/addCourse",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"teacher",
+								"addCourse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Course",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Fisica II\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorAcademico/v1/teacher/updateCourse/67a908cb63c9c5c8a79b2665",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"teacher",
+								"updateCourse",
+								"67a908cb63c9c5c8a79b2665"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorAcademico/v1/teacher/deleteCourse/67a91fb9a765be690d8cdfce",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"teacher",
+								"deleteCourse",
+								"67a91fb9a765be690d8cdfce"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Teacher Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorAcademico/v1/teacher/getCourses/67a91f5aa765be690d8cdfba",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"teacher",
+								"getCourses",
+								"67a91f5aa765be690d8cdfba"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "COURSES",
+			"item": [
+				{
+					"name": "List Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/gestorAcademico/v1/course/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"course",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -62,3 +62,158 @@ El **Maestro** podrá realizar las siguientes acciones:
 - **JWT (JSON Web Token)**: Para la gestión de autenticación y autorización.
 
 ---
+
+## SOLICITUDES POSTMAN
+
+**REGISTER STUDENT**
+**URL:** `/api/auth/registerStudent`
+**Metodo:** `POST`
+**Cuerpo:**
+````json
+    {
+        "name": "string",
+        "surname": "string",
+        "username": "string",
+        "password": "string",
+        "email": "email",
+        "phone": "string",
+        "role": "ROLE",
+        "profilePicture": "file"
+    }
+````
+
+**REGISTER TEACHER**
+**URL:** `/api/auth/registerTeacher`
+**Metodo:** `POST`
+**Cuerpo:**
+````json
+    {
+        "name": "string",
+        "surname": "string",
+        "username": "string",
+        "password": "string",
+        "email": "email",
+        "phone": "string",
+        "role": "ROLE",
+        "profilePicture": "file"
+    }
+````
+
+**LOGIN STUDENT**
+**URL:** `/api/auth/login`
+**Metodo:** `POST`
+**Cuerpo:**
+````json
+    {
+        "email": "email",
+        "password": "string"
+    }
+````
+
+**LIST STUDENTS**
+**URL:** `/api/student/`
+**Metodo:** `GET`
+
+**LIST STUDENT BY ID**
+**URL:** `/api/student/:id`
+**Metodo:** `GET`
+
+**DELETE STUDENT**
+**URL:** `/api/student/deleteStudent/:id`
+**Metodo:** `DELETE`
+
+**UPDATE PASSWORD**
+**URL:** `/api/student/updatePassword/:id`
+**Metodo:** `PATCH`
+**Cuerpo:**
+````json
+    {
+        "newPassword": "string"
+    }
+````
+
+**ASSIGN COURSE**
+**URL:** `/api/student/enrollInCourse`
+**Metodo:** `POST`
+**Cuerpo:**
+````json
+    {
+        "studentId": "id",
+        "courseId": "id"
+    }
+````
+
+**LIST STUDENT COURSES**
+**URL:** `/api/student/getCourses/:id`
+**Metodo:** `GET`
+
+**UPDATE STUDENT**
+**URL:** `/api/student/updateStudent/:id`
+**Metodo:** `PUT`
+**Cuerpo:**
+````json
+    {
+        "name": "string",
+        "surname": "string",
+        "username": "string",
+        "password": "string",
+        "email": "email",
+        "phone": "string",
+        "role": "ROLE",
+        "profilePicture": "file"
+    }
+````
+**LIST TEACHERS**
+**URL:** `/api/teacher/`
+**Metodo:** `GET`
+
+**LIST TEACHER BY ID**
+**URL:** `/api/teacher/findTeacher/:id`
+**Metodo:** `GET`
+
+**DELETE TEACHER**
+**URL:** `/api/teacher/deleteTeacher/:id`
+**Metodo:** `DELETE`
+
+**UPDATE PASSWORD TEACHER**
+**URL:** `/api/teacher/updatePassword/:id`
+**Metodo:** `PATCH`
+**Cuerpo:**
+````json
+    {
+        "newPassword": "string"
+    }
+````
+
+**ADD COURSE**
+**URL:** `/api/teacher/addCourse`
+**Metodo:** `POST`
+**Cuerpo:**
+````json
+    {
+        "name": "string",
+        "teacherId": "id"
+    }
+````
+
+**UPDATE COURSE**
+**URL:** `/api/teacher/updateCourse/:id`
+**Metodo:** `PUT`
+**Cuerpo:**
+````json
+    {
+        "name": "string"
+    }
+````
+
+**DELETE COURSE**
+**URL:** `/api/teacher/deleteCourse/:id`
+**Metodo:** `DELETE`
+
+**LIST TEACHER COURSES**
+**URL:** `/api/teacher/getCourses/:id`
+**Metodo:** `GET`
+
+**LIST ALL COURSES**
+**URL:** `/api/course/`
+**Metodo:** `GET`

@@ -1,6 +1,6 @@
 import {Schema, model} from "mongoose";
 
-const userSchema = Schema({
+const studentSchema = Schema({
     name:{
         type: String,
         required: [true, "Name is required"],
@@ -38,22 +38,24 @@ const userSchema = Schema({
     role:{
         type: String,
         required: true,
-        enum: ["ADMIN_ROLE", "USER_ROLE"]
+        enum: ["TEACHER_ROLE", "STUDENT_ROLE"],
+        default: "STUDENT_ROLE"
     },
     status:{
         type: Boolean,
         default: true
-    }
+    },
+    courses: [{ type: Schema.Types.ObjectId, ref: "Course" }]
 },
 {
     versionKey: false,
     timeStamps: true
 })
 
-userSchema.methods.toJSON = function(){
-    const { password, _id, ...user } = this.toObject()
-    user.uid = _id
-    return user
+studentSchema.methods.toJSON = function(){
+    const { password, _id, ...student } = this.toObject()
+    student.uid = _id
+    return student
 }
 
-export default model("User", userSchema)
+export default model("Student", studentSchema)

@@ -6,7 +6,9 @@ import helmet from "helmet"
 import morgan from "morgan"
 import { dbConnection } from './mongo.js'
 import authRoutes from "../src/auth/auth.routes.js"
-import userRoutes from "../src/user/user.routes.js"
+import studentRoutes from "../src/student/student.routes.js"
+import teacherRoutes from "../src/teacher/teacher.routes.js"
+import courseRoutes from "../src/course/course.routes.js"
 import apiLimiter from '../src/middlewares/validar-cant-peticiones.js'
 
 const middlewares = (app) => {
@@ -20,7 +22,9 @@ const middlewares = (app) => {
 
 const routes = (app) => {
     app.use("/gestorAcademico/v1/auth", authRoutes)
-    app.use("/gestorAcademico/v1/user", userRoutes)
+    app.use("/gestorAcademico/v1/student", studentRoutes)
+    app.use("/gestorAcademico/v1/teacher", teacherRoutes)
+    app.use("/gestorAcademico/v1/course", courseRoutes)
 }
 
 const conectarDB = async () => {
